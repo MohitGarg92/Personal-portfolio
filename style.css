@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/myFont.ttf') format('truetype');
+}
+
+
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #05070f;
+    color: white;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ===== MODERN LOADER ===== */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #05070f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOutLoader 0.8s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(0, 255, 157, 0.2);
+    border-top-color: #00ff9d;
+    border-bottom-color: #ce442c;
+    border-radius: 50%;
+    animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    margin-bottom: 20px;
+}
+
+.loader-text {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #00ff9d;
+    font-family: 'Segoe UI', sans-serif;
+    animation: pulseText 1.5s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseText {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutLoader {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+section {
+    padding: 80px 12%;
+}
+
+h1 {
+    font-size: 96px;
+    text-align: center;
+    font-family: 'myFont';
+    color: #ce442c;
+
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #ce442c;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f10800;
+}
+
+/* Removed old loader-para */
+
+p,
+li {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.intro-para {
+    font-size: 24px;
+    align-self: center;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    align-self: center;
+    margin-top: 30px;
+    padding: 14px 30px;
+    width: 200px;
+    border: 2px solid #00ff9d;
+    background: transparent;
+    color: #00ff9d;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: #0f1624;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    border: 1px solid #089512;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== PROJECT IMAGES ===== */
+.project img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* ===== SKILLS ===== */
+.skills img {
+    height: 120px;
+    margin: 30px;
+    transition: 0.3s;
+}
+
+.skills img:hover {
+    transform: scale(1.2);
+}
+
+/* ===== HOVER DETAILS ===== */
+.hover-box {
+    display: inline-block;
+    margin: 20px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hover-content {
+    font-size: 16px;
+    display: none;
+    position: absolute;
+    background: #0f1624;
+    padding: 10px;
+    border-radius: 8px;
+    top: 35px;
+    z-index: 10;
+}
+
+.hover-box:hover .hover-content {
+    display: block;
+    width: 200px;
+}
+
+/* ===== SCROLL ANIMATION ===== */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.List-items {
+    color: #ccc;
+    padding-left: 60px;
+}
+
+.List-items:hover {
+    text-decoration: underline;
+}
